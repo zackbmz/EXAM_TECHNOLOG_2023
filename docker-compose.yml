@@ -4,15 +4,14 @@ services:
     image: mongo:latest
     ports:
       - 27017:27017
-  app:
-    build:
-      context: ./app
-    ports:
-      - 8763:8763
+
+  seeder:
+    build: ./script
     depends_on:
       - mongodb
-  seeder:
-    build:
-      context: ./script
+  app:
+    build: ./app
+    ports:
+      - 8763:8763
     depends_on:
       - mongodb

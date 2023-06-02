@@ -1,0 +1,17 @@
+# Utilisez l'image de base python
+FROM python:3.9-slim
+
+# Définition du répertoire de travail
+WORKDIR /app
+
+# Installation des dépendances
+RUN pip install pymongo pydantic fastapi uvicorn
+
+# Copie du code de l'API dans le conteneur
+COPY . .
+
+# Expose le port de l'API
+EXPOSE 8763
+
+# Commande pour exécuter l'API et lancer les serveurs
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8763"]

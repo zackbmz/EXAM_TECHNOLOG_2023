@@ -1,0 +1,13 @@
+# Utilisez l'image de base python
+FROM python:3.9-slim
+
+# Définition du répertoire de travail
+WORKDIR /app
+
+RUN pip install pymongo
+
+# Copiez le script de remplissage de la base de données dans le conteneur
+COPY fill_database.py .
+
+# Commande pour exécuter le script de remplissage de la base de données
+CMD ["python", "fill_database.py"]

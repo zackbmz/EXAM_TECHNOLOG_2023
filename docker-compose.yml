@@ -6,7 +6,7 @@ services:
       - 27017:27017
   app:
     build:
-      context: ./api
+      context: ./app
       dockerfile: Dockerfile
     ports:
       - 8763:8763
@@ -14,7 +14,7 @@ services:
       - mongodb
   seeder:
     build:
-      context: ./scripts
+      context: ./script
       dockerfile: Dockerfile
     depends_on:
       - mongodb

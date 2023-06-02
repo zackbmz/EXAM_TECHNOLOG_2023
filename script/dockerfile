@@ -7,7 +7,7 @@ WORKDIR /app
 RUN pip install pymongo
 
 # Copiez le script de remplissage de la base de données dans le conteneur
-COPY fill_database.py .
+COPY fill_db.py .
 
 # Commande pour exécuter le script de remplissage de la base de données
-CMD ["python", "fill_database.py"]
+CMD ["python", "fill_db.py"]

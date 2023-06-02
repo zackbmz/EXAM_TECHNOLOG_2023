@@ -1,34 +1,31 @@
-##Ce fichier sert à remplir initialement notre bdd
-
-from app import Burger
 from pymongo import MongoClient
+from bson import ObjectId
 
-burgers_data = [
+MONGO_HOST = "mongodb"
+DB_NAME = "burger_store"
+BURGER_COLLECTION_NAME = "burgers"
+
+client = MongoClient(MONGO_HOST)
+db = client[DB_NAME]
+
+burgers = [
     {
-        "prix": 15.99,
-        "description": "Burger Deluxe",
-        "allergenes": ["lactose", "gluten"],
+        "_id": ObjectId(),
+        "prix": 12.5,
+        "description": "Burger classique",
+        "allergenes": ["lait", "gluten"],
         "cuisson": "à point",
-        "scoville": 5000
+        "scoville": 5000,
     },
     {
-        "prix": 12.49,
-        "description": "Burger Végétarien",
+        "_id": ObjectId(),
+        "prix": 15.0,
+        "description": "Burger végétarien",
         "allergenes": ["gluten"],
-        "cuisson": "cuit",
-        "scoville": 0
-    },
-    {
-        "prix": 18.99,
-        "description": "Burger Épicé",
-        "allergenes": ["lactose", "gluten"],
         "cuisson": "saignant",
-        "scoville": 6000
-    }
+        "scoville": 6000,
+    },
 ]
 
-client = MongoClient("mongodb://mongodb:27017")
-db = client["burgerdb"]
-burgers_collection = db["burgers"]
-
-burgers_collection.insert_many(burgers_data)
+# Insérer les données
+db[BURGER_COLLECTION_NAME].insert_many(burgers)

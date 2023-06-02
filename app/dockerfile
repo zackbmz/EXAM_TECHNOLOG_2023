@@ -4,9 +4,6 @@ FROM python:3.9-slim
 # Définition du répertoire de travail
 WORKDIR /app
 
-# Copie les fichiers de dépendances dans le conteneur
-COPY requirements.txt .
-
 # Installation des dépendances
 RUN pip install pymongo pydantic fastapi uvicorn
 

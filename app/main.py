@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-from burger import Burger, EvaluateurVentes
+from burger import Burger
+from elevateur_ventes import EvaluateurVentes
+    
 
 app = FastAPI()
 evaluateur_ventes = EvaluateurVentes(date="2023-06-01")

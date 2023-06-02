@@ -5,7 +5,7 @@ services:
     ports:
       - 27017:27017
 
-  seeder:
+  script:
     build: ./script
     depends_on:
       - mongodb

@@ -1,31 +1,47 @@
-Getting started with the app
+# Exam Technolog - Projet API Burgers
+Ce projet consiste en une API pour gérer des burgers. Il permet de créer des burgers, d'évaluer les ventes, et d'obtenir des informations statistiques sur les burgers vendus.
 
-This repository contains an API server written in Python that uses MongoDB as a database. The API allows clients to create stores and add or delete musics to those stores. To get started with the app, you will need to have Docker and docker-compose installed on your system.
-Installing Docker and docker-compose
+## Pré-requis : 
 
-You can download Docker from the official website: https://www.docker.com/get-started. Once you have Docker installed, you can install docker-compose by following the instructions here: https://docs.docker.com/compose/install/.
-Starting the app
+ Docker : Installer Docker
 
-To start the app, follow these steps:
+## Instructions pour l'utilisation : 
 
-    Clone this repository to your local machine:
+Vous pouvez télécharger Docker depuis le site officiel : https://www.docker.com/get-started. Une fois Docker installé, vous pouvez installer docker-compose en suivant les instructions ici : https://docs.docker.com/compose/install/.
 
-git clone https://github.com/Jofresh/PARTIEL-M1MIAI.git
+##Suivez les étapes ci-dessous pour exécuter le projet :
 
-    Change into the cloned directory:
+ 1- Cloner le repository :
 
-cd EXAM_TECHNOLOG_2023/
+'''git clone https://github.com/Jofresh/PARTIEL-M1MIAI.git'''
+	
+ 2- Se positionner dans le bon dossier
+'''cd EXAM_TECHNOLOG_2023'''
 
-    Run the following command to start the app:
+ 3- Construisez l'image Docker :
 
-docker-compose up -d --build
+'''docker-compose up -d --build'''
 
-    Visit http://localhost:8763/docs once the containers are up and running. You can use tools like Postman or cURL to send requests to the API endpoints.
+Cette commande démarrera les conteneurs MongoDB, l'application API et le script de remplissage de la base de données.
 
-Stopping the app
+Accédez à l'API Burgers :
 
-To stop the app, run the following command:
+Ouvrez votre navigateur et accédez à l'URL suivante : http://localhost:8763/
 
-docker-compose down
+Vous devriez voir le message de bienvenue de l'API.
 
-This will stop and remove the Docker containers that were created when the app was started.
+
+Utilisez l'API pour gérer les burgers :
+
+    Pour créer un burger, utilisez une requête POST à l'URL http://localhost:8763/#docs en fournissant les détails necessaires pour get/post des burgers, nombre de ventes, prix otal et également les alergenes de la journée
+
+    
+
+## Arrêtez les conteneurs Docker :
+
+
+
+    docker-compose down
+
+    Cette commande arrêtera et supprimera les conteneurs Docker.
+

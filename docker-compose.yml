@@ -5,13 +5,15 @@ services:
     ports:
       - 27017:27017
 
-  script:
-    build: ./script
+  seeder:
+    build:
+      context: ./script
     depends_on:
       - mongodb
 
   app:
-    build: ./app
+    build:
+      context: ./app
     ports:
       - 8763:8763
     depends_on:

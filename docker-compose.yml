@@ -9,6 +9,7 @@ services:
     build: ./script
     depends_on:
       - mongodb
+
   app:
     build: ./app
     ports:
